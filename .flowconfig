@@ -1,0 +1,22 @@
+[ignore]
+.*/_build/.*
+.*/docs/.*
+.*/.git/.*
+.*/bin/.*
+.*/gulpfile.js
+.*/*.flow
+.*/node_modules/bcryptjs/src/bower.json
+.*/node_modules/node-uuid/lib/sha1-browser.js
+.*/node_modules/weinre/web/client/nls/English.lproj/localizedStrings.js
+.*/flow-typed/.*
+.*/node_modules/react-event-listener/src/index.js
+.*/node_modules/config-chain/test/broken.json
+
+[include]
+./src/
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowIssue
+esproposal.class_instance_fields=enable
+module.name_mapper='^_src\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+module.ignore_non_literal_requires=true

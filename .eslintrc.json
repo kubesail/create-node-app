@@ -1,0 +1,9 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "plugin:flowtype/recommended"],
+  "rules": {
+    "flowtype/require-valid-file-annotation": [2, "always"],
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
+  },
+  "plugins": ["flowtype", "prettier"]
+}
