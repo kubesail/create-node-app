@@ -1,10 +1,23 @@
+#!/usr/bin/env node
 // @flow
 
 const validateProjectName = require('validate-npm-package-name')
 const chalk = require('chalk')
 const commander = require('commander')
-const execSync = require('child_process').execSync
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 const packageJson = require('../package.json')
+
+if (process.versions.node.split('.')[0] < 8) {
+  console.error(
+    chalk.red(`
+      You are running Node ${process.versions.node}.
+      create-node-app requires Node 8 or higher.
+      Please update your version of Node.
+    `)
+  );
+  process.exit(1);
+}
 
 let projectName
 
@@ -40,9 +53,8 @@ if (typeof projectName === 'undefined') {
 }
 
 function printValidationResults (results) {
-  if (typeof results !== 'undefined') {
-    results.forEach(error => console.error(chalk.red(`  *  ${error}`)))
-  }
+  if (!Array.isArray(results)) return
+  results.forEach(error => console.error(chalk.red(`  *  ${error}`)))
 }
 
 function checkAppName (appName) {
@@ -55,9 +67,9 @@ function checkAppName (appName) {
   }
 }
 
-function shouldUseYarn () {
+async function shouldUseYarn () {
   try {
-    execSync('yarnpkg --version', { stdio: 'ignore' })
+    await exec('yarnpkg --version', { stdio: 'ignore' })
     return true
   } catch (e) {
     return false
