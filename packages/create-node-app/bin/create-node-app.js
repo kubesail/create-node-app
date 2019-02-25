@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 // @flow
 
-const validateProjectName = require('validate-npm-package-name')
 const chalk = require('chalk')
 const commander = require('commander')
 const util = require('util');
@@ -57,15 +56,6 @@ function printValidationResults (results) {
   results.forEach(error => console.error(chalk.red(`  *  ${error}`)))
 }
 
-function checkAppName (appName) {
-  const validationResult = validateProjectName(appName)
-  if (!validationResult.validForNewPackages) {
-    console.error(`Could not create a project called ${chalk.red(`"${appName}"`)} because of npm naming restrictions:`)
-    printValidationResults(validationResult.errors)
-    printValidationResults(validationResult.warnings)
-    process.exit(1)
-  }
-}
 
 async function shouldUseYarn () {
   try {
