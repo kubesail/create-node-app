@@ -1,14 +1,14 @@
 {
-  "name": "react-scripts",
+  "name": "node-app-scripts",
   "version": "2.1.5",
-  "description": "Configuration and scripts for Create React App.",
-  "repository": "facebook/create-react-app",
+  "description": "Configuration and scripts for Create Node App.",
+  "repository": "kubesail/create-node-app",
   "license": "MIT",
   "engines": {
     "node": ">=8.10"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/kubesail/create-node-app/issues"
   },
   "files": [
     "bin",
@@ -20,7 +20,7 @@
     "utils"
   ],
   "bin": {
-    "react-scripts": "./bin/react-scripts.js"
+    "node-app-scripts": "./bin/node-app-scripts.js"
   },
   "types": "./lib/react-app.d.ts",
   "dependencies": {
@@ -37,13 +37,14 @@
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "5.12.0",
+    "eslint": "5.14.1",
     "eslint-config-react-app": "^3.0.7",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.1",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.12.4",
+    "express": "^4.16.4",
     "file-loader": "2.0.0",
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",

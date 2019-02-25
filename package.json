@@ -4,6 +4,6 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "cd packages/node-app-scripts && node bin/react-scripts.js start"
+    "start": "cd packages/node-app-scripts && node bin/node-app-scripts.js start"
   }
 }

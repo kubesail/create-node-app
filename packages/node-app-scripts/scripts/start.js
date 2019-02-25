@@ -51,6 +51,7 @@ const createDevServerConfig = require('../config/webpackDevServer.config');
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
+
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
@@ -58,6 +59,7 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 
 // Tools like Cloud9 rely on this.
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
+const DEFAULT_API_PORT = parseInt(process.env.API_PORT, 10) || 4000;
 const HOST = process.env.HOST || '0.0.0.0';
 
 if (process.env.HOST) {
@@ -76,7 +78,6 @@ if (process.env.HOST) {
   );
   console.log();
 }
-
 // We require that you explictly set browsers and do not fall back to
 // browserslist defaults.
 const { checkBrowsers } = require('react-dev-utils/browsersHelper');
@@ -133,8 +134,13 @@ checkBrowsers(paths.appPath, isInteractive)
       openBrowser(urls.localUrlForBrowser);
     });
 
-    ['SIGINT', 'SIGTERM'].forEach(function(sig) {
-      process.on(sig, function() {
+    // Start API Server
+    console.log(paths.apiIndexJs);
+    const app = require(paths.apiIndexJs);
+    app.listen(DEFAULT_API_PORT, () => console.log(`API listening on port ${DEFAULT_API_PORT}!`));
+
+    ['SIGINT', 'SIGTERM'].forEach(function (sig) {
+      process.on(sig, function () {
         devServer.close();
         process.exit();
       });

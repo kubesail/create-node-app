@@ -80,13 +80,14 @@ module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appIndexJs: resolveModule(resolveApp, 'src/www/index'),
+  apiIndexJs: resolveModule(resolveApp, 'src/api/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveModule(resolveApp, 'src/setupTests'),
-  proxySetup: resolveApp('src/setupProxy.js'),
+  testsSetup: resolveModule(resolveApp, 'src/www/setupTests'),
+  proxySetup: resolveApp('src/www/setupProxy.js'), //probably unneeded now -- this is for handling how requests from the react app get proxied without specifying a separate domain, ie (https://UI_DOMAIN/api/yadayada)
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
@@ -102,20 +103,21 @@ module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appIndexJs: resolveModule(resolveApp, 'src/www/index'),
+  apiIndexJs: resolveModule(resolveApp, 'src/api/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveModule(resolveApp, 'src/setupTests'),
-  proxySetup: resolveApp('src/setupProxy.js'),
+  testsSetup: resolveModule(resolveApp, 'src/www/setupTests'),
+  proxySetup: resolveApp('src/www/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
   // These properties only exist before ejecting:
   ownPath: resolveOwn('.'),
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
-  appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
+  appTypeDeclarations: resolveApp('src/www/react-app-env.d.ts'),
   ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
 };
 
@@ -128,7 +130,7 @@ const reactScriptsLinked =
 // config before publish: we're in ./packages/react-scripts/config/
 if (
   !reactScriptsLinked &&
-  __dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1
+  __dirname.indexOf(path.join('packages', 'node-app-scripts', 'config')) !== -1
 ) {
   module.exports = {
     dotenv: resolveOwn('template/.env'),
@@ -136,20 +138,21 @@ if (
     appBuild: resolveOwn('../../build'),
     appPublic: resolveOwn('template/public'),
     appHtml: resolveOwn('template/public/index.html'),
-    appIndexJs: resolveModule(resolveOwn, 'template/src/index'),
+    appIndexJs: resolveModule(resolveOwn, 'template/src/www/index'),
+    apiIndexJs: resolveModule(resolveOwn, 'template/src/api/index'),
     appPackageJson: resolveOwn('package.json'),
     appSrc: resolveOwn('template/src'),
     appTsConfig: resolveOwn('template/tsconfig.json'),
     yarnLockFile: resolveOwn('template/yarn.lock'),
-    testsSetup: resolveModule(resolveOwn, 'template/src/setupTests'),
-    proxySetup: resolveOwn('template/src/setupProxy.js'),
+    testsSetup: resolveModule(resolveOwn, 'template/src/www/setupTests'),
+    proxySetup: resolveOwn('template/src/www/setupProxy.js'),
     appNodeModules: resolveOwn('node_modules'),
     publicUrl: getPublicUrl(resolveOwn('package.json')),
     servedPath: getServedPath(resolveOwn('package.json')),
     // These properties only exist before ejecting:
     ownPath: resolveOwn('.'),
     ownNodeModules: resolveOwn('node_modules'),
-    appTypeDeclarations: resolveOwn('template/src/react-app-env.d.ts'),
+    appTypeDeclarations: resolveOwn('template/src/www/react-app-env.d.ts'),
     ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
   };
 }
