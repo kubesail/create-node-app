@@ -8,8 +8,7 @@
     "react-scripts": "2.1.5"
   },
   "scripts": {
-    "start-www": "set REACT_APP_LAUNCH_WWW=true && react-scripts start",
-    "start-api": "node src/index.js",
+    "start": "bash bin/start_dev.sh",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

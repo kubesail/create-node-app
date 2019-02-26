@@ -5,9 +5,7 @@ const chalk = require('chalk')
 const commander = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
-const util = require('util')
-const exec = util.promisify(require('child_process').exec)
-const spawn = util.promisify(require('child_process').spawn)
+const { execSync } = require('child_process')
 const packageJson = require('../package.json')
 const { checkAppName, shouldUseYarn } = require('../src/util')
 const ownPath = path.join(__dirname, '..')
@@ -63,39 +61,49 @@ async function createApp (appName, verbose) {
   }
 
   // Copy template files
+  const modules = ['React', 'Express']
+  console.log(
+    `\nCreating a new ${modules.map(module => chalk.cyan(module)).join(' + ')} app in ${chalk.green(
+      appPath
+    )}.\n`
+  )
   fs.copySync(templatePath, appPath)
 
-  console.log('hi')
   // Install dependencies
-  await spawn(useYarn ? 'yarnpkg' : 'npm', ['install'], {
+  console.log('Installing packages. This might take a couple of minutes.\n')
+  await execSync(`${useYarn ? 'yarnpkg' : 'npm'} install`, {
     cwd: appPath,
     stdio: 'inherit'
   })
-  console.log('hi2')
 
-  // Display finished comman
+  // Display finished message
   const displayedCommand = useYarn ? 'yarn' : 'npm'
+  const displayedCommandRun = `${displayedCommand}${useYarn ? '' : ' run'}`
   console.log()
   console.log(`Success! Created ${appName} at ${appPath}`)
   console.log('Inside that directory, you can run several commands:')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommand} start`))
-  console.log('    Starts the development server.')
+  console.log(chalk.cyan(`  ${displayedCommand} start www`))
+  console.log('    Starts the React development server.')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}build`))
+  console.log(chalk.cyan(`  ${displayedCommand} start api`))
+  console.log('    Starts the Express development server.')
+  console.log()
+  console.log(chalk.cyan(`  ${displayedCommandRun} build`))
   console.log('    Bundles the app into static files for production.')
   console.log()
   console.log(chalk.cyan(`  ${displayedCommand} test`))
   console.log('    Starts the test runner.')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}eject`))
+  console.log(chalk.cyan(`  ${displayedCommandRun} eject-www`))
   console.log('    Removes this tool and copies build dependencies, configuration files')
   console.log('    and scripts into the app directory. If you do this, you can’t go back!')
   console.log()
   console.log('We suggest that you begin by typing:')
   console.log()
   console.log(chalk.cyan('  cd'), appName)
-  console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`)
+  console.log(`  ${chalk.cyan(`${displayedCommand} start www`)}`)
+  console.log(`  ${chalk.cyan(`${displayedCommand} start api`)}`)
   const readmeExists = false // TODO detect existing files / README
   if (readmeExists) {
     console.log()

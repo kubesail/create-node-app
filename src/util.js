@@ -2,7 +2,7 @@
 const validateProjectName = require('validate-npm-package-name')
 const chalk = require('chalk')
 const util = require('util')
-const exec = util.promisify(require('child_process').exec)
+const { execSync } = require('child_process')
 
 function printValidationResults (results) {
   if (!Array.isArray(results)) return
@@ -36,7 +36,7 @@ function checkAppName (programName, appName) {
 
 async function shouldUseYarn () {
   try {
-    await exec('yarnpkg --version', { stdio: 'ignore' })
+    await execSync('yarnpkg --version', { stdio: 'ignore' })
     return true
   } catch (e) {
     return false
