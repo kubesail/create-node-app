@@ -1,0 +1,26 @@
+{
+  "name": "create-node-app-template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5"
+  },
+  "scripts": {
+    "start-www": "set REACT_APP_LAUNCH_WWW=true && react-scripts start",
+    "start-api": "node src/index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

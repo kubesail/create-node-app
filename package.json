@@ -1,5 +1,8 @@
 {
   "name": "create-node-app",
+  "bin": {
+    "create-node-app": "bin/create-node-app.js"
+  },
   "version": "1.0.0",
   "description": "Create Node.js apps by running one command",
   "main": "index.js",
@@ -23,6 +26,6 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "dependencies": {
-    "nodegit": "^0.23.0"
+    "fs-extra": "^7.0.1"
   }
 }
