@@ -1,10 +1,19 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = 4000
+app.use(cors())
 
-app.get('/', (req, res) => res.send('Hello World!'))
+let count = 0
+app.get('/count', (req, res) => res.send({ count }))
+app.post('/count/increment', (req, res) => {
+  count++
+  res.send({ count })
+})
 
-const count = 0
-app.get('/count', (req, res) => count++ && res.send({ count }))
+app.post('/count/decrement', (req, res) => {
+  count--
+  res.send({ count })
+})
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example API app listening on port ${port}!`))
