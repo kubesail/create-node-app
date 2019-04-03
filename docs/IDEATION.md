@@ -34,10 +34,7 @@
                 "name": "myApp",
                 "dependencies": {
                     "@kubesail/redis": "^1.0.0"
-                },
-                "metamodules": [
-                    "@kubesail/redis"
-                ]
+                }
             }
             ```
         Metamodules are entirely optional, but provide a level of plug-and-play not currently available in the JavaScript ecosystem. With a single package, I get not only a custom-tuned Node.js driver (in this case redis), I also get a Docker container for development and a Kubernetes definition for deploying to production. Additionally, configuration details are automatically added to my configuration files. While a normal NPM module simply represents a bundle of JavaScript - a MetaModule represents everything you need to accomplish a particular goal. You can think of it as a way of bundling together both the service and the driver. **We'll take care of auditing and testing version compatability, you worry about building applications**!
