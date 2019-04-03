@@ -5,10 +5,13 @@
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
   },
   "scripts": {
-    "start": "bash bin/start_dev.sh",
+    "start": "bash bin/dev.sh",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -101,9 +101,8 @@ async function createApp (appName, verbose) {
   console.log()
   console.log('We suggest that you begin by typing:')
   console.log()
-  console.log(chalk.cyan('  cd'), appName)
-  console.log(`  ${chalk.cyan(`${displayedCommand} start www`)}`)
-  console.log(`  ${chalk.cyan(`${displayedCommand} start api`)}`)
+  console.log(chalk.cyan(`  cd ${appName}`))
+  console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`)
   const readmeExists = false // TODO detect existing files / README
   if (readmeExists) {
     console.log()
