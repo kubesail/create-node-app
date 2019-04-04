@@ -6,7 +6,9 @@
     "cors": "^2.8.5",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "deploy-node-app": "^0.0.14",
+    "@kubesail/redis": "^0.1.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0"

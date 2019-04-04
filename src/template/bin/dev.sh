@@ -1,5 +1,9 @@
-# Template created by Create Node App
+# Create Node App dev startup script
 
+# Create docker-compose.yaml file and pipe to stdin to bring up dependencies
+./node_modules/.bin/deploy-node-app --config=compose | docker-compose up -f -
+
+# Start node app
 ./node_modules/.bin/concurrently \
   --names "www,api" \
   --handle-input true \
