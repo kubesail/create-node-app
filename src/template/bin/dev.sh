@@ -1,7 +1,8 @@
 # Create Node App dev startup script
 
+# Commented out until module system is working
 # Create docker-compose.yaml file and pipe to stdin to bring up dependencies
-./node_modules/.bin/deploy-node-app --config=compose | docker-compose up -f -
+# ./node_modules/.bin/deploy-node-app --no-build --format compose | docker-compose up -f -
 
 # Start node app
 ./node_modules/.bin/concurrently \

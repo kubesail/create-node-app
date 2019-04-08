@@ -69,9 +69,19 @@ async function createApp (appName, verbose) {
   )
   fs.copySync(templatePath, appPath)
 
+  const appPackageJsonPath = path.join(appPath, 'package.json')
+  const appPackageJson = JSON.parse(fs.readFileSync(appPackageJsonPath))
+  appPackageJson.name = appName
+  fs.writeFileSync(appPackageJsonPath, JSON.stringify(appPackageJson, null, 2))
+
   // Install dependencies
   console.log('Installing packages. This might take a couple of minutes.\n')
   await execSync(`${useYarn ? 'yarnpkg' : 'npm'} install`, {
+    cwd: appPath,
+    stdio: 'inherit'
+  })
+
+  await execSync(`git init && git add . && git commit -m "initial commit"`, {
     cwd: appPath,
     stdio: 'inherit'
   })
@@ -83,21 +93,19 @@ async function createApp (appName, verbose) {
   console.log(`Success! Created ${appName} at ${appPath}`)
   console.log('Inside that directory, you can run several commands:')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommand} start www`))
-  console.log('    Starts the React development server.')
+  console.log(chalk.cyan(`  ${displayedCommand} start`))
+  console.log('    Starts the React + Express development servers.')
   console.log()
-  console.log(chalk.cyan(`  ${displayedCommand} start api`))
-  console.log('    Starts the Express development server.')
-  console.log()
-  console.log(chalk.cyan(`  ${displayedCommandRun} build`))
-  console.log('    Bundles the app into static files for production.')
+  console.log(chalk.cyan(`  ${displayedCommandRun} deploy`))
+  console.log('    Containerizes and deploys the React + Express apps to Kubernetes.')
   console.log()
   console.log(chalk.cyan(`  ${displayedCommand} test`))
   console.log('    Starts the test runner.')
   console.log()
   console.log(chalk.cyan(`  ${displayedCommandRun} eject-www`))
-  console.log('    Removes this tool and copies build dependencies, configuration files')
-  console.log('    and scripts into the app directory. If you do this, you can’t go back!')
+  console.log('    Removes the Create React App tools and copies build dependencies,')
+  console.log('    configuration files and scripts into the app directory. If you do')
+  console.log('    this, you can’t go back!')
   console.log()
   console.log('We suggest that you begin by typing:')
   console.log()
