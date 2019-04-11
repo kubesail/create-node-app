@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@kubesail/redis": "^0.1.0",
     "cors": "^2.8.5",
+    "deploy-node-app": "^0.1.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.8",
-    "deploy-node-app": "^0.0.14",
-    "@kubesail/redis": "^0.1.0"
+    "react-scripts": "2.1.8"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11"
   },
   "scripts": {
     "start": "bash bin/dev.sh",
