@@ -3,16 +3,16 @@
   "bin": {
     "create-node-app": "bin/create-node-app.js"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create Node.js apps by running one command",
   "main": "index.js",
   "repository": "https://github.com/erulabs/create-node-app",
   "author": "Seandon Mooy",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "fs-extra": "^7.0.1",
-    "chalk": "^2.4.1",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
