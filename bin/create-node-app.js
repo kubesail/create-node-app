@@ -42,7 +42,7 @@ createApp(projectName, program.verbose)
 
 async function createApp (appName, verbose) {
   checkAppName(program.name(), appName)
-  const useYarn = shouldUseYarn()
+  const useYarn = await shouldUseYarn()
   const appPath = path.join(cwd, appName)
 
   // Create project directory
