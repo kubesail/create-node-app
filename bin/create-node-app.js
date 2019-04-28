@@ -39,7 +39,7 @@ const program = new commander.Command(packageJson.name)
 
 createApp(projectName, program.verbose)
 
-async function createApp (appName, verbose) {
+async function createApp(appName, verbose) {
   checkAppName(program.name(), appName)
   const useYarn = shouldUseYarn()
   const appPath = path.join(cwd, appName)
@@ -81,6 +81,8 @@ async function createApp (appName, verbose) {
     stdio: 'inherit'
   })
 
+  // .gitignore files won't be published on NPM, so they must be renamed here
+  fs.renameSync(path.join(appPath, 'gitignore'), path.join(appPath, '.gitignore'))
   await execSync(`git init && git add . && git commit -m "initial commit"`, {
     cwd: appPath,
     stdio: 'inherit'
