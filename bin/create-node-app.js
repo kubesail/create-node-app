@@ -11,14 +11,15 @@ const { checkAppName, shouldUseYarn } = require('../src/util')
 const ownPath = path.join(__dirname, '..')
 const templatePath = path.join(ownPath, 'src', 'template')
 const cwd = process.cwd()
+const semver = require('semver')
 
-if (process.versions.node.split('.')[0] < 8) {
-  console.error(
-    chalk.red(`
-      You are running Node ${process.versions.node}.
-      create-node-app requires Node 8 or higher.
-      Please update your version of Node.
-    `)
+// Target the same node version that react-scripts targets
+if (!semver.satisfies(process.version, '>=8.10.0')) {
+  console.log(
+    chalk.red(
+      `You are using Node ${process.version}, which is not supported by Create Node App.\n\n` +
+        `Please update to Node 8.10 or higher.\n`
+    )
   )
   process.exit(1)
 }
@@ -39,7 +40,7 @@ const program = new commander.Command(packageJson.name)
 
 createApp(projectName, program.verbose)
 
-async function createApp(appName, verbose) {
+async function createApp (appName, verbose) {
   checkAppName(program.name(), appName)
   const useYarn = shouldUseYarn()
   const appPath = path.join(cwd, appName)

@@ -13,6 +13,7 @@
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "fs-extra": "^7.0.1",
+    "semver": "^6.0.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
