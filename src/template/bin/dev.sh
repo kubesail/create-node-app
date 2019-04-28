@@ -1,8 +1,6 @@
-# Create Node App dev startup script
+#!/usr/bin/env bash -e
 
-# Commented out until module system is working
-# Create docker-compose.yaml file and pipe to stdin to bring up dependencies
-# ./node_modules/.bin/deploy-node-app --no-build --format compose | docker-compose up -f -
+# Create Node App dev startup script
 
 # Start node app
 ./node_modules/.bin/concurrently \
@@ -11,4 +9,4 @@
   --default-input-target 1 \
   --prefix-colors "bgBlue.bold,bgMagenta.bold" \
   "bash ./bin/dev_www.sh" \
-  "bash ./bin/dev_api.sh"
+  "bash ./bin/dev_app.sh"
