@@ -4,7 +4,7 @@
 
 # Start node app
 ./node_modules/.bin/concurrently \
-  --names "www,api" \
+  --names "www,app" \
   --handle-input true \
   --default-input-target 1 \
   --prefix-colors "bgBlue.bold,bgMagenta.bold" \

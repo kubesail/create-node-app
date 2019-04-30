@@ -31,5 +31,8 @@
   },
   "scripts": {
     "start": "bash ./bin/dev.sh"
+  },
+  "prettier": {
+    "printWidth": 100
   }
 }

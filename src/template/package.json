@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@kubesail/redis": "^0.1.0",
+    "@create-node/redis": "file:../../../redis",
     "cors": "^2.8.5",
-    "deploy-node-app": "^0.1.1",
+    "deploy-node-app": "file:../../../deploy-node-app",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.8"
@@ -31,10 +31,13 @@
     "not op_mini all"
   ],
   "deploy-node-app": {
+    "dev": {
+      "format": "compose"
+    },
     "prod": {
       "port": 4000,
       "protocol": "http",
-      "entrypoint": "src/api/index.js"
+      "entrypoint": "src/app/index.js"
     }
   }
 }
