@@ -6,7 +6,7 @@
   "version": "1.0.6",
   "description": "Create Node.js apps by running one command",
   "main": "index.js",
-  "repository": "https://github.com/erulabs/create-node-app",
+  "repository": "https://github.com/create-node/create-node-app",
   "author": "Seandon Mooy",
   "license": "MIT",
   "dependencies": {
