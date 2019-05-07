@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "deploy": "deploy-node-app --no-build --no-deploy -o -",
     "test": "react-scripts test",
-    "eject-www": "react-scripts eject"
+    "eject-www": "react-scripts eject",
+    "metamodule": "yarn add @nodeapp/$1 && cp node_modules/@nodeapp/$1/drivers/* src/api/"
   },
   "eslintConfig": {
     "extends": "react-app"
