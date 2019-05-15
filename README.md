@@ -33,16 +33,16 @@ Add redis to our project:
 
 then
 
-    ```js
-    const redis = require('@nodeapp/redis')()
+```js
+const redis = require('@nodeapp/redis')()
 
-    // This "just works" both in development and production,
-    // without needing to install or configure redis, as the
-    // containers are created by deploy-node-app
-    redis.get('my-key', function(err, reply) {
-      console.log(reply);
-    })
-    ```
+// This "just works" both in development and production,
+// without needing to install or configure redis, as the
+// containers are created by deploy-node-app
+redis.get('my-key', function(err, reply) {
+  console.log(reply)
+})
+```
 
 [Explore other modules](https://github.com/nodeapp-metamodules)
 
