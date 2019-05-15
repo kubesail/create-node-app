@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@kubesail/redis": "^0.1.0",
     "cors": "^2.8.5",
     "deploy-node-app": "^0.1.1",
     "react": "^16.8.3",
@@ -19,8 +18,7 @@
     "build": "react-scripts build",
     "deploy": "deploy-node-app --no-build --no-deploy -o -",
     "test": "react-scripts test",
-    "eject-www": "react-scripts eject",
-    "metamodule": "yarn add @nodeapp/$1 && cp node_modules/@nodeapp/$1/drivers/* src/api/"
+    "eject-www": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
