@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@kubesail/redis": "^0.1.0",
     "cors": "^2.8.5",
     "deploy-node-app": "^0.1.1",
     "react": "^16.8.3",
