@@ -25,7 +25,7 @@ Create Node apps with no build configuration. Inspired by and based on [create-r
 
     npx create-node-app my-app
 
-#### Add a meta-module
+#### Add a metamodule
 
 Add redis to our project:
 
