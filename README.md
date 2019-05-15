@@ -1,6 +1,6 @@
 # Create Node App
 
-Create Node apps with no build configuration. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app). Create apps that closely follow [The Twelve Factors](https://12factor.net) of web application development with a single command.
+Create Node apps with no build configuration. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app). This tool let you create an app in a single command which closely follows [The Twelve Factors](https://12factor.net) of web application development.
 
 ## What's included?
 
