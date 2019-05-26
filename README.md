@@ -10,22 +10,34 @@ Create Node apps with no build configuration. Inspired by and based on [create-r
 - Developer tools: ESLint, editorconfig, prettier, automatic reload
 - Secure and optimized `Dockerfile` setup for easy containerized production deploys
   - _Optional containerized development & testing is on the roadmap_
-- Production ready Kubernetes configurations for your app and all its dependencies
-- A metamodule system for easy development and deployment of dependencies, like PostgreSQL, Redis, and MySQL, all with no configuration
-- Build, test, and deploy helpers (with instant & free Kubernetes hosting powered by [kubesail.com](kubesail.com))
+- Production ready Kubernetes configurations for your app and its dependencies
+- A metamodule system for easy development with sercices like PostgreSQL, Redis, and MySQL, all with no configuration
+- Build, test, and deploy helpers
 
-`create-node-app` is modular, some popular optional modules include:
+`create-node-app` has a simple core, with a small ecosystem of "meta-modules".
 
-- Redis, Postgres, and other backend services (local containerized services, as well as production ready Kubernetes configurations)
-- [Explore other modules](https://github.com/nodeapp-metamodules) or help [create them](#contributing) if the one you want doesn't exist
+# Meta-Modules
+
+Meta-Modules are NPM Modules which contain:
+
+  - A validated and secure Node.js driver
+  - Metadata for configuring said driver (Environment Variables)
+  - A Docker Container Image which is validated to work properly with the chosen driver
+  - Metadata for configuring the service container
+
+For example, the [redis metamodule](https://github.com/nodeapp-metamodules/redis) bundles the Node `redis` driver, a Redis 5 Docker image, and knows how to connect to Redis, without any configuration! Metamodules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
+
+Explore modules [here](https://github.com/nodeapp-metamodules) or help [create them](#contributing) if the one you want doesn't exist!
 
 ## Quick start
 
-#### Create an app
+### Create an app
 
     npx create-node-app my-app
 
-#### Add a metamodule
+Checkout the readme for more details about building and deploying your app!
+
+### Add a meta-module
 
 Add redis to our project:
 
@@ -34,17 +46,17 @@ Add redis to our project:
 then
 
 ```js
-const redis = require('@nodeapp/redis')()
+const redis = require("@nodeapp/redis")();
 
-// This "just works" both in development and production,
-// without needing to install or configure redis, as the
-// containers are created by deploy-node-app
-redis.get('my-key', function(err, reply) {
-  console.log(reply)
-})
+// This "just works" both in development and production!
+redis.get("my-key", function(err, reply) {
+  console.log(reply);
+});
 ```
 
-[Explore other modules](https://github.com/nodeapp-metamodules)
+Run `npm run start` to begin development using Redis and Node!
+
+[Explore other meta-modules](https://github.com/nodeapp-metamodules)
 
 #### Build, test and deploy:
 
@@ -54,7 +66,7 @@ redis.get('my-key', function(err, reply) {
 
 ## Free App Hosting
 
-This project is maintained by [kubesail.com](kubesail.com), which provides free-tier provides hosting. After creating an app, try `npm run deploy` to easily launch your app on a Kubernetes cluster with built-in load-balancing, HTTPS, and high-availability!
+This project is maintained by [kubesail.com](kubesail.com), which provides free-tier provides hosting. After creating an app, try `npm run deploy` to easily launch your app on a Kubernetes cluster with built-in load-balancing, HTTPS, and high-availability! KubeSail also offers the best way to iterate on Kubernetes resources - check us out!
 
 ## Project Goals and Aspirations
 
