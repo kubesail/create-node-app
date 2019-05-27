@@ -13,11 +13,9 @@
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env
+*.local
+*.log
+*.log.gz
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+tmp/
