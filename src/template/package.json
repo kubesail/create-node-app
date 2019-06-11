@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "cors": "^2.8.5",
     "deploy-node-app": "^0.1.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -35,5 +34,6 @@
       "protocol": "http",
       "entrypoint": "src/api/index.js"
     }
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

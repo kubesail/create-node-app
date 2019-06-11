@@ -2,21 +2,19 @@ import React, { Component } from 'react'
 import logos from './logos.svg'
 import './App.css'
 
-const API_HOST = process.env.REACT_APP_API_HOST || 'http://localhost:4000'
-
 class App extends Component {
   state = {
     count: 'loading...'
   }
 
   componentDidMount = async () => {
-    const { count } = await window.fetch(`${API_HOST}/count`).then(res => res.json())
+    const { count } = await window.fetch(`/api/count`).then(res => res.json())
     this.setState({ count })
   }
 
   increment = async () => {
     const { count } = await window
-      .fetch(`${API_HOST}/count/increment`, { method: 'POST' })
+      .fetch(`/api/count/increment`, { method: 'POST' })
       .then(res => res.json())
     this.setState({ count })
   }
