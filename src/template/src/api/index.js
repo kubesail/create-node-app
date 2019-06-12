@@ -14,4 +14,4 @@ app.post('/api/count/decrement', (req, res) => {
   res.send({ count })
 })
 
-app.listen(port, () => console.log(`Example API app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example backend API listening on port ${port}!`))

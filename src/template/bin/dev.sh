@@ -1,10 +1,6 @@
-# Create Node App dev startup script
+#!/usr/bin/env bash -e
 
-# Commented out until module system is working
-# Create docker-compose.yaml file and pipe to stdin to bring up dependencies
-# ./node_modules/.bin/deploy-node-app --no-build --format compose | docker-compose up -f -
-
-# Start node app
+# Start both react + express apps concurrently
 ./node_modules/.bin/concurrently \
   --names "www,api" \
   --handle-input true \

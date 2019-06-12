@@ -15,7 +15,7 @@
   "scripts": {
     "start": "bash bin/dev.sh",
     "build": "react-scripts build",
-    "deploy": "deploy-node-app --no-build --no-deploy -o -",
+    "deploy": "deploy-node-app",
     "test": "react-scripts test",
     "eject-www": "react-scripts eject"
   },

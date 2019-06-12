@@ -11,7 +11,7 @@ Create Node apps with no build configuration. Inspired by and based on [create-r
 - Secure and optimized `Dockerfile` setup for easy containerized production deploys
   - _Optional containerized development & testing is on the roadmap_
 - Production ready Kubernetes configurations for your app and its dependencies
-- A metamodule system for easy development with sercices like PostgreSQL, Redis, and MySQL, all with no configuration
+- A metamodule system for easy development with services like PostgreSQL, Redis, and MySQL, all with no configuration
 - Build, test, and deploy helpers
 
 `create-node-app` has a simple core, with a small ecosystem of "meta-modules".
@@ -20,10 +20,10 @@ Create Node apps with no build configuration. Inspired by and based on [create-r
 
 Meta-Modules are NPM Modules which contain:
 
-  - A validated and secure Node.js driver
-  - Metadata for configuring said driver (Environment Variables)
-  - A Docker Container Image which is validated to work properly with the chosen driver
-  - Metadata for configuring the service container
+- A validated and secure Node.js driver
+- Metadata for configuring said driver (Environment Variables)
+- A Docker Container Image which is validated to work properly with the chosen driver
+- Metadata for configuring the service container
 
 For example, the [redis metamodule](https://github.com/nodeapp-metamodules/redis) bundles the Node `redis` driver, a Redis 5 Docker image, and knows how to connect to Redis, without any configuration! Metamodules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
 
@@ -46,12 +46,12 @@ Add redis to our project:
 then
 
 ```js
-const redis = require("@nodeapp/redis")();
+const redis = require('@nodeapp/redis')()
 
 // This "just works" both in development and production!
-redis.get("my-key", function(err, reply) {
-  console.log(reply);
-});
+redis.get('my-key', function(err, reply) {
+  console.log(reply)
+})
 ```
 
 Run `npm run start` to begin development using Redis and Node!
