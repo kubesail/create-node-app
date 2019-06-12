@@ -1,66 +1,51 @@
-import React, { Component } from "react";
-import logos from "./logos.svg";
-import "./App.css";
+// @flow
+import React, { Component } from 'react'
+import logos from './logos.svg'
+import './App.css'
 
-const APP_HOST = process.env.REACT_APP_HOST || "http://localhost:4000";
+const APP_HOST = process.env.REACT_APP_HOST || 'http://localhost:4000'
 
 class App extends Component {
   state = {
-    count: "loading..."
-  };
+    count: 'loading...'
+  }
 
   componentDidMount = async () => {
-    const { count } = await window
-      .fetch(`${APP_HOST}/count`)
-      .then(res => res.json());
-    this.setState({ count });
-  };
+    const { count } = await window.fetch(`${APP_HOST}/count`).then(res => res.json())
+    this.setState({ count })
+  }
 
   increment = async () => {
     const { count } = await window
-      .fetch(`${APP_HOST}/count/increment`, { method: "POST" })
-      .then(res => res.json());
-    this.setState({ count });
-  };
+      .fetch(`${APP_HOST}/count/increment`, { method: 'POST' })
+      .then(res => res.json())
+    this.setState({ count })
+  }
 
-  render() {
+  render () {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logos} className="App-logo" alt="logo" />
           <p>
-            {"Learn "}
-            <a
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            {'Learn '}
+            <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
               React
             </a>
-            {", "}
-            <a
-              href="https://expressjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            {', '}
+            <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer">
               Express
             </a>
-            {", and "}
-            <a
-              href="https://kubernetes.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            {', and '}
+            <a href="https://kubernetes.io" target="_blank" rel="noopener noreferrer">
               Kubernetes
             </a>
           </p>
           <p>
-            Modify <code>src/www/App.js</code> or <code>src/app/index.js</code>{" "}
-            to reload UI or App.
+            Modify <code>src/www/App.js</code> or <code>src/app/index.js</code> to reload UI or App.
           </p>
           <p>
-            <code>yarn deploy</code> to build containers and deploy them to
-            production
+            <code>yarn deploy</code> to build containers and deploy them to production
           </p>
           <hr />
           <h2>Count: {this.state.count}</h2>
@@ -72,8 +57,8 @@ class App extends Component {
           </p>
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

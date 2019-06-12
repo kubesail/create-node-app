@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@create-node/redis": "file:../../../redis",
+    "@nodeapp/redis": "2.0.3",
     "cors": "^2.8.5",
-    "deploy-node-app": "file:../../../deploy-node-app",
+    "deploy-node-app": "^0.1.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.8"
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "bash bin/dev.sh",
     "build": "react-scripts build",
-    "deploy": "deploy-node-app --no-build --no-deploy -o -",
+    "deploy": "deploy-node-app",
     "test": "react-scripts test",
     "eject-www": "react-scripts eject"
   },
@@ -37,7 +37,7 @@
     "prod": {
       "port": 4000,
       "protocol": "http",
-      "entrypoint": "src/app/index.js"
+      "entrypoint": "src/api/index.js"
     }
   }
 }

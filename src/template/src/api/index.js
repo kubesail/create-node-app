@@ -1,3 +1,4 @@
+// @flow
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -16,4 +17,4 @@ app.post('/count/decrement', (req, res) => {
   res.send({ count })
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example backend API listening on port ${port}!`))
