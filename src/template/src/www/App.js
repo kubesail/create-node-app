@@ -47,7 +47,7 @@ class App extends Component {
           <hr />
           <h2>Count: {this.state.count}</h2>
           <p>
-            Call <code>{API_HOST}/count/increment</code>
+            Call <code>/api/count/increment</code>
             <button onClick={this.increment} className="App-button">
               Go
             </button>
