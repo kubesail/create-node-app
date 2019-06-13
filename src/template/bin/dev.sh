@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
 
 # Start both react + express apps concurrently
 ./node_modules/.bin/concurrently \

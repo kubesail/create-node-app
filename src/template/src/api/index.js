@@ -1,17 +1,27 @@
-const express = require('express')
-const app = express()
-const port = 4000
+const express = require("express");
+require("dotenv").config();
+const redis = require("@nodeapp/redis")();
 
-let count = 0
-app.get('/api/count', (req, res) => res.send({ count }))
-app.post('/api/count/increment', (req, res) => {
-  count++
-  res.send({ count })
-})
+const app = express();
+const port = 4000;
 
-app.post('/api/count/decrement', (req, res) => {
-  count--
-  res.send({ count })
-})
+app.get("/api/count", (req, res) => {
+  redis.get("count", function(err, count) {
+    res.send({ count: count || 0 });
+  });
+});
+app.post("/api/count/increment", (req, res) => {
+  redis.incr("count", function(err, count) {
+    res.send({ count });
+  });
+});
 
-app.listen(port, () => console.log(`Example backend API listening on port ${port}!`))
+app.post("/api/count/decrement", (req, res) => {
+  redis.decr("count", function(err, count) {
+    res.send({ count });
+  });
+});
+
+app.listen(port, () =>
+  console.log(`Example backend API listening on port ${port}!`)
+);
