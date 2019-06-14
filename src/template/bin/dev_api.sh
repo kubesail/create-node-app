@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
 
 # Bring up required dependencies
 ./node_modules/.bin/deploy-node-app dev --skip app
