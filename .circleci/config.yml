@@ -17,7 +17,7 @@ jobs:
 
       - run:
           name: Linting
-          command: ./node_modules/.bin/eslint .
+          command: ./node_modules/.bin/eslint --ignore-path=src/template/package.json .
 
 workflows:
   version: 2

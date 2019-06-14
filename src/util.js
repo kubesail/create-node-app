@@ -1,7 +1,6 @@
 // @flow
 const validateProjectName = require('validate-npm-package-name')
 const chalk = require('chalk')
-const util = require('util')
 const { execSync } = require('child_process')
 
 function printValidationResults (results) {

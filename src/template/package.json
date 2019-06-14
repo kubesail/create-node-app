@@ -12,7 +12,18 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "babel-eslint": "10.0.1",
+    "cross-spawn": "^6.0.5",
+    "eslint": "5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "prettier": "^1.17.1"
   },
   "scripts": {
     "start": "bash bin/dev.sh",
