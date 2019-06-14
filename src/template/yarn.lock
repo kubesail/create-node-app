@@ -1091,9 +1091,9 @@
     glob-to-regexp "^0.3.0"
 
 "@nodeapp/redis@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@nodeapp/redis/-/redis-2.0.3.tgz#8ae60aca00c72bc66890bdfa95ed9eaab0bd9334"
-  integrity sha512-h2F1sHFXkMzH4CheznffQmKOpa0cq8CHzgNO3jJGfTXeiolhUnkIEzvOXoKYhkYL+rXI7XKfN5motyvVuNJdaQ==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nodeapp/redis/-/redis-2.1.0.tgz#2c479278742635c42d5b4832466b0c8de33956b7"
+  integrity sha512-ylrqWNeoqUjih60DXGulzX8Z69b1CwY8fcWaNlUMjWJfZsyu5QJComnN5KFSyq0zTop3Q/tDp/GZUmXhGRWGnQ==
   dependencies:
     redis "=2.8.0"
 
