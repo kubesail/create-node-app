@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Bring up required dependencies
-./node_modules/.bin/deploy-node-app dev --skip app
+../../deploy-node-app/src/index.js dev --skip app --format compose --no-build --no-push
 
 # Determine docker-compose port mapping and set environment variables
-./node_modules/.bin/deploy-node-app --generate-local-env
+../../deploy-node-app/src/index.js --generate-local-env --format compose
 
 # Use nodemon to watch and reload our app codebase
-./node_modules/.bin/nodemon src/app/index.js
+./node_modules/.bin/nodemon src/api/index.js
