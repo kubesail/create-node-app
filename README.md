@@ -10,7 +10,7 @@ Create modern Node.js apps with no build configuration. In a single command, thi
     cd my-app
     npm start
 
-_Creates a new repository and starts a React frontend, Express backend, Postgres, and Redis Docker containers locally_
+_Creates a new repository and starts a React frontend, an Express backend, and containers for Postgres and Redis locally_
 
 #### Deploying to Production
 
@@ -39,7 +39,7 @@ Meta-modules are simple npm modules which include:
 - A Docker Container Image which is validated to work with the chosen library
 - Metadata for configuring the service's container
 
-For example, the [redis meta-module](https://github.com/nodeapp-meta-modules/redis) bundles the [redis](https://github.com/NodeRedis/node_redis) library, a Redis 5 Docker image, and knows how to connect to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
+For example, the [redis meta-module](https://github.com/nodeapp-meta-modules/redis) bundles the [redis](https://github.com/NodeRedis/node_redis) library, a Redis 5 Docker image, and knows how to connect your app to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
 
 Explore modules [here](https://github.com/nodeapp-meta-modules) or help create them if the one you want doesn't exist!
 
