@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@nodeapp/redis": "^2.0.3",
+    "@metamodules/redis": "^2.0.3",
     "deploy-node-app": "^0.1.2",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",

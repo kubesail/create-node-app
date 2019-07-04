@@ -26,7 +26,7 @@ _Containerizes your app and its dependencies (like Postgres and Redis) and deplo
 - A deploy script, `npm run deploy` that deploys your frontend, backend, and dependencies to Kubernetes via [deploy-node-app](https://github.com/kubesail/deploy-node-app)
 - Creates a secure `Dockerfile` for containerized production deploys
 - Developer tools: ESLint, editorconfig, prettier, automatic reload
-- A [meta-module](https://github.com/nodeapp-meta-modules/documentation) system for easy development with services like PostgreSQL, Redis, and MongoDB, all with no configuration
+- A [meta-module](https://github.com/metamodules/documentation) system for easy development with services like PostgreSQL, Redis, and MongoDB, all with no configuration
 
 `create-node-app` has a simple core, with a small ecosystem of _meta-modules_.
 
@@ -39,9 +39,9 @@ Meta-modules are simple npm modules which include:
 - A Docker Container Image which is validated to work with the chosen library
 - Metadata for configuring the service's container
 
-For example, the [redis meta-module](https://github.com/nodeapp-meta-modules/redis) bundles the [redis](https://github.com/NodeRedis/node_redis) library, a Redis 5 Docker image, and knows how to connect your app to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
+For example, the [redis meta-module](https://github.com/metamodules/redis) bundles the [redis](https://github.com/NodeRedis/node_redis) library, a Redis 5 Docker image, and knows how to connect your app to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
 
-Explore modules [here](https://github.com/nodeapp-meta-modules) or help create them if the one you want doesn't exist!
+Explore modules [here](https://github.com/metamodules) or help create them if the one you want doesn't exist!
 
 ## Free App Hosting
 
