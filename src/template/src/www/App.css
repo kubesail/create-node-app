@@ -32,12 +32,3 @@
   animation: App-logo-spin infinite 5s linear;
   cursor: pointer;
 }
-/*
-@keyframes App-logo-spin {
-  0% {
-    box-shadow: 0 0 7px 0 rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 7px 7px rgba(255, 255, 255, 0.5);
-  }
-} */

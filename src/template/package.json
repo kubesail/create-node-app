@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@metamodules/redis": "^2.0.3",
-    "deploy-node-app": "^0.1.2",
+    "deploy-node-app": "^1.2.0",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
