@@ -1,6 +1,6 @@
 # Create Node App ![CircleCI](https://img.shields.io/circleci/build/github/kubesail/create-node-app.svg) [![npm version](https://img.shields.io/npm/v/create-node-app.svg)](https://www.npmjs.com/package/create-node-app)
 
-Create modern Node.js apps with no build configuration. In a single command, this tool bootstraps a React + Express app and a Postgres Docker container. Create Node App creates an app which closely follows [The Twelve Factors](https://12factor.net) of web application development. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app).
+Create modern Node.js apps with no build configuration. In a single command, this tool bootstraps a React + Express app and a Postgres Docker container. Created apps closely follow [The Twelve Factors](https://12factor.net) of web application development. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app).
 
 ![Terminal Example](docs/term1.svg)
 
