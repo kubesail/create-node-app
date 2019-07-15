@@ -2,6 +2,8 @@
 
 Create modern Node.js apps with no build configuration. In a single command, this tool lets you create an app which closely follows [The Twelve Factors](https://12factor.net) of web application development. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app).
 
+![Terminal Example](docs/term1.svg)
+
 ## Quick start
 
 #### Creating an App
@@ -10,23 +12,24 @@ Create modern Node.js apps with no build configuration. In a single command, thi
     cd my-app
     npm start
 
-_Creates a new repository and starts a React frontend, an Express backend, and containers for Postgres and Redis locally_
+_Creates a new repository and starts a React frontend, an Express backend, and a container for Postgres locally_
 
 #### Deploying to Production
 
     npm run deploy
 
-_Containerizes your app and its dependencies (like Postgres and Redis) and deploys them to Kubernetes_
+_Containerizes your app and its dependencies (like Postgres) and deploys them to Kubernetes_
 
 ## What’s Included?
 
 `create-node-app` automatically sets up and manages:
 
-- A complete web app with React, Express, Postgres, and Redis
+- A complete web app with React, Express, Postgres
 - A deploy script, `npm run deploy` that deploys your frontend, backend, and dependencies to Kubernetes via [deploy-node-app](https://github.com/kubesail/deploy-node-app)
+- A DB script `npm run psql` to explore your Dockerized Postgres
 - Creates a secure `Dockerfile` for containerized production deploys
 - Developer tools: ESLint, editorconfig, prettier, automatic reload
-- A [meta-module](https://github.com/metamodules/documentation) system for easy development with services like PostgreSQL, Redis, and MongoDB, all with no configuration
+- A [meta-module](https://github.com/metamodules/documentation) system for easy development with services like PostgreSQL, and MongoDB, all with no configuration
 
 `create-node-app` has a simple core, with a small ecosystem of _meta-modules_.
 
@@ -39,7 +42,7 @@ Meta-modules are simple npm modules which include:
 - A Docker Container Image which is validated to work with the chosen library
 - Metadata for configuring the service's container
 
-For example, the [redis meta-module](https://github.com/metamodules/redis) bundles the [redis](https://github.com/NodeRedis/node_redis) library, a Redis 5 Docker image, and knows how to connect your app to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
+For example, the [postgres meta-module](https://github.com/metamodules/postgres) bundles the [node-postgres](https://github.com/brianc/node-postgres) library, a Redis 5 Docker image, and knows how to connect your app to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
 
 Explore modules [here](https://github.com/metamodules) or help create them if the one you want doesn't exist!
 
