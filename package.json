@@ -3,11 +3,24 @@
   "bin": {
     "create-node-app": "bin/createNodeApp.js"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Create Node.js apps by running one command",
   "main": "index.js",
   "repository": "https://github.com/create-node/create-node-app",
-  "author": "Seandon Mooy",
+  "contributors": [
+    {
+      "name": "Seandon Mooy",
+      "email": "seandon@kubesail.com"
+    },
+    {
+      "name": "Dan Pastusek",
+      "email": "dan@kubesail.com"
+    }
+  ],
+  "authors": [
+    "Seandon Mooy <seandon@kubesail.com>",
+    "Dan Pastusek <dan@kubesail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
