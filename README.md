@@ -1,6 +1,6 @@
 # Create Node App ![CircleCI](https://img.shields.io/circleci/build/github/kubesail/create-node-app.svg) [![npm version](https://img.shields.io/npm/v/create-node-app.svg)](https://www.npmjs.com/package/create-node-app)
 
-Create modern Node.js apps with no build configuration. In a single command, this tool lets you create an app which closely follows [The Twelve Factors](https://12factor.net) of web application development. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app).
+Create modern Node.js apps with no build configuration. In a single command, this tool bootstraps a React + Express app and a Postgres Docker container. Create Node App creates an app which closely follows [The Twelve Factors](https://12factor.net) of web application development. Inspired by and based on [create-react-app](https://github.com/facebook/create-react-app).
 
 ![Terminal Example](docs/term1.svg)
 
@@ -42,7 +42,7 @@ Meta-modules are simple npm modules which include:
 - A Docker Container Image which is validated to work with the chosen library
 - Metadata for configuring the service's container
 
-For example, the [postgres meta-module](https://github.com/metamodules/postgres) bundles the [node-postgres](https://github.com/brianc/node-postgres) library, a Redis 5 Docker image, and knows how to connect your app to Redis, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
+For example, the [postgres meta-module](https://github.com/metamodules/postgres) bundles the [node-postgres](https://github.com/brianc/node-postgres) library, a Postgres 11 Docker image, and knows how to connect your app to Postgres, _without any configuration!_ Meta-modules wrap some of the complexity of building microservices with Node.js, allowing you to rapidly iterate with the stack of your choice!
 
 Explore modules [here](https://github.com/metamodules) or help create them if the one you want doesn't exist!
 
