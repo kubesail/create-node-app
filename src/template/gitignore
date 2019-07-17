@@ -18,4 +18,6 @@
 *.log
 *.log.gz
 
+# used by deploy-node-app
 tmp/
+secrets/
