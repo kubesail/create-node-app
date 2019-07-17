@@ -48,7 +48,7 @@ Explore modules [here](https://github.com/metamodules) or help create them if th
 
 ## Free App Hosting
 
-This project is maintained by [KubeSail](kubesail.com), which provides free-tier hosting. After creating an app, try `npm run deploy` to easily launch your app on a Kubernetes cluster with built-in load-balancing, HTTPS, and high-availability! KubeSail also offers the best way to iterate on Kubernetes resources - check us out!
+This project is maintained by [KubeSail](https://kubesail.com), which provides free-tier hosting. After creating an app, try `npm run deploy` to easily launch your app on a Kubernetes cluster with built-in load-balancing, HTTPS, and high-availability! KubeSail also offers the best way to iterate on Kubernetes resources - check us out!
 
 ## Contributing
 
