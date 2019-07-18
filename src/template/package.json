@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@metamodules/postgres": "^1.1.6",
-    "deploy-node-app": "^1.4.1",
+    "@metamodules/postgres": "^1.2.1",
+    "deploy-node-app": "^1.4.2",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
