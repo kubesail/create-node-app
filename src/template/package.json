@@ -46,13 +46,16 @@
     "prod": {
       "port": 4000,
       "protocol": "http",
-      "entrypoint": "src/api/index.js"
+      "entrypoint": "src/api/index.js",
+      "type": "spa"
     },
     "dev": {
       "port": 4000,
       "protocol": "http",
       "entrypoint": "src/api/index.js",
-      "registry": ""
+      "registry": "",
+      "type": "spa",
+      "isPublic": false
     }
   },
   "proxy": "http://localhost:4000"
