@@ -1,59 +1,65 @@
 {
-  "name": "create-node-app-template",
-  "version": "0.1.0",
-  "private": true,
+  "name": "template-node-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "changelog": "gren changelog",
+    "build": "tsc --project ./",
+    "dev": "NODE_ENV=dev nodemon index.ts",
+    "start": "node build/index.js",
+    "types:check": "tsc",
+    "lint:check": "eslint './{config,lib,scripts,test,types}/**/*.ts' --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint --fix './{config,lib,scripts,test,types}/**/*.ts' --no-error-on-unmatched-pattern",
+    "format:check": "npx prettier --check lib/**/*.ts",
+    "format:fix": "npx prettier --write lib/**/*.ts",
+    "test": "NODE_ENV=test jest --coverage"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
+  "author": "Variant Mobile Engineering <mobileengineering@drivevariant.com>",
+  "license": "ISC",
   "dependencies": {
-    "@metamodules/postgres": "^1.2.1",
-    "deploy-node-app": "^1.4.3",
-    "dotenv": "^8.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "@hapi/hapi": "^20.1.2",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/vision": "^6.0.1",
+    "config": "^3.3.6",
+    "dotenv": "^8.2.0",
+    "hapi-swagger": "^14.1.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.1",
-    "babel-eslint": "10.0.1",
-    "cross-spawn": "^6.0.5",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-flowtype": "2.50.1",
-    "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "prettier": "^1.17.1"
+    "@types/config": "0.0.38",
+    "@types/hapi__hapi": "^20.0.7",
+    "@types/hapi__inert": "^5.2.2",
+    "@types/hapi__vision": "^5.5.2",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-sonarjs": "^0.6.0",
+    "import-sort-style-module": "^6.0.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "prettier-plugin-import-sort": "0.0.6",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
   },
-  "scripts": {
-    "start": "bash bin/dev.sh",
-    "build": "react-scripts build",
-    "deploy": "deploy-node-app",
-    "test": "react-scripts test",
-    "eject-www": "react-scripts eject",
-    "psql": "export $(cat .env | xargs) && PGPASSWORD=${POSTGRES_PASSWORD} psql -h ${POSTGRES_SERVICE_HOST} -p ${POSTGRES_SERVICE_PORT} -U ${POSTGRES_USER} ${POSTGRES_DB}"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "deploy-node-app": {
-    "prod": {
-      "port": 4000,
-      "protocol": "http",
-      "entrypoint": "src/api/index.js"
-    },
-    "dev": {
-      "port": 4000,
-      "protocol": "http",
-      "entrypoint": "src/api/index.js",
-      "registry": ""
+  "importSort": {
+    ".js, .ts": {
+      "style": "module",
+      "parser": "typescript"
     }
   },
-  "proxy": "http://localhost:4000"
+  "moduleDirectories": [
+    "node_modules",
+    ""
+  ]
 }
